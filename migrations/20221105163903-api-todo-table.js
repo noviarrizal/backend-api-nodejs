@@ -12,7 +12,7 @@ module.exports = {
 			},
 			activity_group_id: {
 				type: Sequelize.STRING,
-				allowNull: false,
+				allowNull: true,
 			},
 			title: {
 				type: Sequelize.STRING,
@@ -24,7 +24,7 @@ module.exports = {
 			},
 			priority: {
 				type: Sequelize.STRING,
-				allowNull: false,
+				allowNull: true,
 			},
 			created_at: {
 				type: Sequelize.DATE,
