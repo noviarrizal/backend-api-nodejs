@@ -1,0 +1,28 @@
+version: "3.2"
+services:
+  nodejs:
+    build:
+      context: .
+    image: arifnoviarrizal/api-node-image
+    environment:
+      - PORT=3030
+      - MYSQL_HOST=172.17.0.1
+      - MYSQL_PORT=8090
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root123
+      - MYSQL_DBNAME=muhammad_arif_noviarrizal
+    volumes:
+      - ./bin/www
+    ports:
+      - "3030:8090"
+    container_name: api-node-container
+  mysql:
+      image: mysql:latest
+      environment:
+        - PORT=3030
+        - MYSQL_HOST=172.17.0.1
+        - MYSQL_PORT=8090
+        - MYSQL_USER=root
+        - MYSQL_PASSWORD=root123
+        - MYSQL_DBNAME=muhammad_arif_noviarrizal
+      container_name: api-mysql
